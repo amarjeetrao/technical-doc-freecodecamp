@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ReactJS Technical Documentation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="grid-container p-0">
+      <header class="header fixed-top">
+        <nav class="navbar container navbar-expand-sm px-4 px-sm-0">
+          <a class="navbar-brand" href="#">
+            <img
+              class="brand-logo"
+              src="./public/image/logo.svg"
+              alt="ReactJS logo"
+            />
+          </a>
+          <div class="connections">
+            <input
+              class="d-none d-sm-inline form-control col-3 my-3 my-sm-1"
+              type="search"
+              placeholder="Search"
+            />
+            <a href="https://codepen.io/amarjeetrao/" class="codepen">
+              <svg
+                class="social-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 22.834"
+              >
+                <path
+                  class="a"
+                  d="M17.531,0H6.469A6.318,6.318,0,0,0,0,6.155V16.68a6.318,6.318,0,0,0,6.469,6.155H17.531A6.318,6.318,0,0,0,24,16.68V6.155A6.318,6.318,0,0,0,17.531,0Zm-.141,13a.827.827,0,0,1-.4.691l-4.552,2.859a.918.918,0,0,1-.966,0L7.008,13.745a.827.827,0,0,1-.4-.691V9.923a.832.832,0,0,1,.384-.682l4.387-2.908a.914.914,0,0,1,.984-.013l4.627,2.912a.827.827,0,0,1,.4.691Z"
+                ></path>
+              </svg>
+            </a>
+            <a href="https://github.com/Amarjeetrao" class="github">
+              <svg
+                class="social-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 23.428"
+              >
+                <path
+                  class="a"
+                  d="M22.4,11.378a11.942,11.942,0,0,0-4.369-4.369A11.73,11.73,0,0,0,12.005,5.4,11.75,11.75,0,0,0,5.978,7.009a11.942,11.942,0,0,0-4.369,4.369A11.745,11.745,0,0,0,0,17.4a11.661,11.661,0,0,0,2.288,7.057,11.724,11.724,0,0,0,5.918,4.336.689.689,0,0,0,.624-.109.606.606,0,0,0,.2-.471c0-.033,0-.312-.005-.843s-.005-1-.005-1.391l-.361.06a4.406,4.406,0,0,1-.865.055,6.863,6.863,0,0,1-1.084-.109,2.376,2.376,0,0,1-1.046-.471,1.99,1.99,0,0,1-.69-.964l-.159-.361a3.965,3.965,0,0,0-.493-.8,1.886,1.886,0,0,0-.679-.591l-.109-.077a1.3,1.3,0,0,1-.2-.186.993.993,0,0,1-.142-.219c-.033-.071-.005-.131.077-.181a1.015,1.015,0,0,1,.454-.06l.312.049a2.232,2.232,0,0,1,.772.378,2.552,2.552,0,0,1,.755.81,2.756,2.756,0,0,0,.865.974,1.834,1.834,0,0,0,1.024.334,4.672,4.672,0,0,0,.892-.077,3.2,3.2,0,0,0,.7-.235A2.518,2.518,0,0,1,9.81,22.7a11.169,11.169,0,0,1-1.6-.279,6.424,6.424,0,0,1-1.467-.608A4.217,4.217,0,0,1,5.48,20.767a5.005,5.005,0,0,1-.821-1.642,7.794,7.794,0,0,1-.323-2.343,4.549,4.549,0,0,1,1.237-3.219,4.2,4.2,0,0,1,.109-3.186,2.2,2.2,0,0,1,1.347.214,9.423,9.423,0,0,1,1.3.6c.274.164.5.307.662.422a11.311,11.311,0,0,1,6,0l.591-.372a8.215,8.215,0,0,1,1.44-.69,2.008,2.008,0,0,1,1.265-.17,4.158,4.158,0,0,1,.126,3.186,4.573,4.573,0,0,1,1.237,3.219,7.894,7.894,0,0,1-.323,2.354,4.8,4.8,0,0,1-.827,1.642,4.379,4.379,0,0,1-1.265,1.04,6.282,6.282,0,0,1-1.467.608,10.341,10.341,0,0,1-1.6.279,2.785,2.785,0,0,1,.81,2.217v3.3a.628.628,0,0,0,.2.471.67.67,0,0,0,.619.109,11.787,11.787,0,0,0,5.918-4.336A11.661,11.661,0,0,0,24,17.411,11.7,11.7,0,0,0,22.4,11.378Z"
+                  transform="translate(0 -5.4)"
+                ></path>
+              </svg>
+            </a>
+            <button
+              class="navbar-toggler d-block d-lg-none"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navCollapse"
+              aria-controls="navCollapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-toggler"></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+      <aside
+        class="sidebar collapse navbar-collapse d-lg-block"
+        id="navCollapse"
+      >
+        <nav class="navbar flex-column p-0" id="navbar">
+          <header class="navbar-header align-self-start">
+              Getting Familiar with ReactJS
+          </header>
+          <ul class="list-group w-100">
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Hello_World" class="nav-link">Hello World</a>
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Introducing_JSX" class="nav-link">Introducing JSX</a>
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Rendering_Elements" class="nav-link"
+                >Rendering Elements</a
+              >
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Components_and_Props" class="nav-link"
+                >Components and Props</a
+              >
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#State_and_Lifecycle" class="nav-link"
+                >State and Lifecycle</a
+              >
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Handling_Events" class="nav-link">Handling Events</a>
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Conditional_Rendering" class="nav-link"
+                >Conditional Rendering</a
+              >
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Lists_and_Keys" class="nav-link">Lists and Keys</a>
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Forms" class="nav-link">Forms</a>
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Lifting_State_Up" class="nav-link">Lifting State Up</a>
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Composition_vs_Inheritance" class="nav-link"
+                >Composition vs Inheritance</a
+              >
+            </li>
+            <li class="list-group-item px-4 px-lg-3">
+              <a href="#Thinking_in_React" class="nav-link"
+                >Thinking in React</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main px-5 px-lg-0" id="main-doc">
+        <section class="main-section" id="Hello_World">
+          <header class="section-header">
+            <h1 class="section-heading">Hello World</h1>
+          </header>
+          <article class="section-content">
+            <section class="article-sections">
+              <p class="article-overview">
+                The smallest React example looks like this:
+              </p>
+              <code class="code-example">
+                <pre>
+  ReactDOM.render(
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;,
+    document.getElementById('root')
+  );
+                </pre>
+              </code>
+              <a
+                href="https://reactjs.org/redirect-to-codepen/hello-world"
+                target="_blank"
+                >Try it on CodePen</a
+              >
+              <p>
+                Click the link above to open an online editor. Feel free to make
+                some changes, and see how they affect the output. Most pages in
+                this guide will have editable examples like this one.
+              </p>
+            </section>
+          </article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Introducing_JSX">
+            <h1 class="section-heading">Introducing JSX</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Rendering_Elements">
+            <h1 class="section-heading">Rendering Elements</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Components_and_Props">
+            <h1 class="section-heading">Components and Props</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="State_and_Lifecycle">
+            <h1 class="section-heading">State and Lifecycle</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Handling_Events">
+            <h1 class="section-heading">Handling Events</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Conditional_Rendering">
+            <h1 class="section-heading">Conditional Rendering</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Lists_and_Keys">
+            <h1 class="section-heading">Lists and Keys</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Forms">
+            <h1 class="section-heading">Forms</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Lifting_State_Up">
+            <h1 class="section-heading">Lifting State Up</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Composition_vs_Inheritance">
+            <h1 class="section-heading">Composition vs Inheritance</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+        <section class="main-section">
+          <header class="section-header" id="Thinking_in_React">
+            <h1 class="section-heading">Thinking in React</h1>
+          </header>
+          <article class="section-content"></article>
+        </section>
+      </main>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/script.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>

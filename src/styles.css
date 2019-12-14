@@ -5,7 +5,9 @@
   --react-secondary-color: #20232a;
   --body-background-color: #fff;
   --icon-color: #00d8ff;
+  --icon-size: 26px;
   --text-color: #20232a;
+  --code-background-color: #212529;
   --navbar-background-color: #fff;
   --list-background-color: #f7f7f7;
   --list-hover-background-color: #efefef;
@@ -39,25 +41,32 @@ input[type="search"] {
   min-width: 10rem;
 }
 
-.social-icon {
-  width: 22px;
-  height: 22px;
-  margin-top: -1px;
-  fill: var(--icon-color);
+/***************** typography start *******************/
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.navbar-header {
+  padding: 1rem 2.2rem;
+  padding-top: 0;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.article-overview {
+  font-size: 1.2rem;
+  font-weight: 100;
 }
 
 @media (min-width: 567px) {
-  .social-icon {
-    width: 26px;
-    height: 26px;
-    margin-top: -1px;
-    fill: var(--icon-color);
+  .section-heading {
+    font-size: 4rem;
   }
 }
 
-.sidebar-active {
-  border-left: 5px solid var(--react-primary-color);
-}
+/***************** typography ends *******************/
 
 /*==================== bootstrap customization ====================*/
 
@@ -75,11 +84,6 @@ input[type="search"] {
 
 .form-control:focus {
   box-shadow: none;
-}
-
-.sidebar {
-  background: var(--list-background-color);
-  transition: all 0.4s ease-in;
 }
 
 .list-group-item {
@@ -101,6 +105,7 @@ input[type="search"] {
 .list-group-item:active a {
   font-weight: 500;
 }
+
 /*==================== custom components ====================*/
 
 /***************** header starts *******************/
@@ -129,19 +134,19 @@ input[type="search"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 100px;
 }
 
-.connections .behance,
-.connections .codepen,
-.connections .github,
-.connections .linkedIn {
-  width: 30px;
-  height: 30px;
+.social-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-top: -1px;
+  fill: var(--icon-color);
 }
 
 .navbar-toggler {
-  width: 22px;
-  height: 22px;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 
 .icon-toggler {
@@ -175,24 +180,64 @@ input[type="search"] {
 
 /***************** header ends *******************/
 
-/***************** body styles *******************/
+/***************** utilities & components start *******************/
 
-@media (min-width: 992px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 3rem;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow-y: scroll;
+  background: var(--list-background-color);
+  transition: all 0.4s ease-in;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-active {
+  border-left: 5px solid var(--react-primary-color);
+}
+
+.code-container {
+  color: white;
+  background: #212529;
+  border-radius: 0.4rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.article-link {
+  padding: 0.4rem;
+  font-weight: 500;
+  color: var(--react-primary-color);
+  border-radius: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.article-link:hover {
+  text-decoration: none;
+  color: var(--react-primary-color);
+}
+
+@media (min-width: 567px) {
+  .article-link:hover {
+    border: 1px solid var(--react-primary-color);
   }
 }
 
-.navbar-header {
-  padding: 1rem 2.2rem;
-  padding-top: 0;
-    font-weight: bold;
-    font-size: 1.7rem;
+@media (min-width: 992px) {
+  .sidebar {
+    width: 24rem;
+  }
 }
+/***************** utilities & components ends *******************/
 
-.section-heading {
-  font-size: 4rem;
-  font-weight: bolder
+/***************** body styles *******************/
+
+@media (min-width: 992px) {
+  .main {
+    margin-left: 28rem;
+  }
 }

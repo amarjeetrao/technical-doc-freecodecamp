@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
-    <div class="grid-container p-0">
+    <div class="p-0">
       <header class="header fixed-top">
         <nav class="navbar container navbar-expand-sm px-4 px-sm-0">
           <a class="navbar-brand" href="#">
@@ -70,14 +70,14 @@
         </nav>
       </header>
       <aside
-        class="sidebar collapse navbar-collapse d-lg-block"
+        class="sidebar collapse navbar-collapse fixed-left d-lg-block pb-5"
         id="navCollapse"
       >
-        <nav class="navbar flex-column p-0" id="navbar">
+        <nav class="navbar flex-column p-0 pb-5" id="navbar">
           <header class="navbar-header align-self-start">
-              Getting Familiar with ReactJS
+            Getting Familiar with ReactJS
           </header>
-          <ul class="list-group w-100">
+          <ul class="list-group w-100 pb-5">
             <li class="list-group-item px-4 px-lg-3">
               <a href="#Hello_World" class="nav-link">Hello World</a>
             </li>
@@ -136,22 +136,24 @@
           </header>
           <article class="section-content">
             <section class="article-sections">
-              <p class="article-overview">
+              <p class="article-overview my-4">
                 The smallest React example looks like this:
               </p>
-              <code class="code-example">
-                <pre>
-  ReactDOM.render(
-    &lt;h1&gt;Hello, world!&lt;/h1&gt;,
-    document.getElementById('root')
-  );
-                </pre>
-              </code>
-              <a
-                href="https://reactjs.org/redirect-to-codepen/hello-world"
-                target="_blank"
-                >Try it on CodePen</a
-              >
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    ReactDOM.render(
+      &lt;h1&gt;Hello, world!&lt;/h1&gt;,
+      document.getElementById('root')
+    );</code>
+              </pre>
+              <p>
+                <a
+                  class="article-link"
+                  href="https://reactjs.org/redirect-to-codepen/hello-world"
+                  target="_blank"
+                  >Try it on CodePen</a
+                >
+              </p>
               <p>
                 Click the link above to open an online editor. Feel free to make
                 some changes, and see how they affect the output. Most pages in

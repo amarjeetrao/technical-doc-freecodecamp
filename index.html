@@ -160,70 +160,277 @@
                 this guide will have editable examples like this one.
               </p>
             </section>
+            <section class="article-sections py-2">
+              <h2 class="article-heading my-4">How to Read This Guide</h2>
+              <p>
+                This is the first chapter in a step-by-step guide about main
+                React concepts. You can find a list of all its chapters in the
+                navigation sidebar. If you’re reading this from a mobile device,
+                you can access the navigation by pressing the button in the
+                bottom right corner of your screen.
+              </p>
+              <p>
+                Every chapter in this guide builds on the knowledge introduced
+                in earlier chapters.
+                <strong
+                  >You can learn most of React by reading the
+                  <q>Main Concepts</q> guide chapters in the order they appear
+                  in the sidebar.</strong
+                >
+                For example, <a href="#Introducing_JSX">Introducing JSX</a> is
+                the next chapter after this one.
+              </p>
+            </section>
+            <section class="article-sections py-2">
+              <h2 class="article-heading my-4">Knowledge Level Assumptions</h2>
+              <p>
+                React is a JavaScript library, and so we’ll assume you have a
+                basic understanding of the JavaScript language.
+                <strong
+                  >If you don’t feel very confident, we recommend
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript"
+                    >going through a JavaScript tutorial</a
+                  >
+                  to check your knowledge level</strong
+                >
+                and enable you to follow along this guide without getting lost.
+                It might take you between 30 minutes and an hour, but as a
+                result you won’t have to feel like you’re learning both React
+                and JavaScript at the same time.
+              </p>
+            </section>
+            <section class="article-sections last-article-section py-2">
+              <h2 class="article-heading my-4">Let’s Get Started!</h2>
+              <p>
+                Now you done with this page let go to the
+                <a href="#Introducing_JSX">next chapter</a>.
+              </p>
+            </section>
           </article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Introducing_JSX">
+        <section class="main-section" id="Introducing_JSX">
+          <header class="section-header">
             <h1 class="section-heading">Introducing JSX</h1>
           </header>
-          <article class="section-content"></article>
+          <article class="section-content">
+            <section class="article-sections">
+              <p class="article-overview my-4">
+                Consider this variable declaration:
+              </p>
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</code>
+              </pre>
+              <p>
+                This funny tag syntax is neither a string nor HTML.
+              </p>
+              <p>
+                It is called JSX, and it is a syntax extension to JavaScript. We
+                recommend using it with React to describe what the UI should
+                look like. JSX may remind you of a template language, but it
+                comes with the full power of JavaScript.
+              </p>
+              <p>
+                JSX produces React “elements”. We will explore rendering them to
+                the DOM in the next section. Below, you can find the basics of
+                JSX necessary to get you started.
+              </p>
+            </section>
+            <section class="article-sections py-2">
+              <h2 class="article-heading my-4">Why JSX?</h2>
+              <p>
+                React embraces the fact that rendering logic is inherently
+                coupled with other UI logic: how events are handled, how the
+                state changes over time, and how the data is prepared for
+                display.
+              </p>
+              <p>
+                Instead of artificially separating technologies by putting
+                markup and logic in separate files, React separates concerns
+                with loosely coupled units called <q>components</q> that contain
+                both. We will come back to components in a further section, but
+                if you’re not yet comfortable putting markup in JS, this talk
+                might convince you otherwise.
+              </p>
+              <p>
+                React doesn’t require using JSX, but most people find it helpful
+                as a visual aid when working with UI inside the JavaScript code.
+                It also allows React to show more useful error and warning
+                messages.
+              </p>
+              <p>
+                With that out of the way, let’s get started!
+              </p>
+            </section>
+            <section class="article-sections py-2">
+              <h2 class="article-heading my-4">Embedding Expressions in JSX</h2>
+              <p>
+                In the example below, we declare a variable called name and then
+                use it inside JSX by wrapping it in curly braces:
+              </p>
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    const name = 'Josh Perez';
+    const element = &lt;h1&gt;Hello, {name}&lt;/h1&gt;;
+
+    ReactDOM.render(
+    element,
+    document.getElementById('root')
+    );</code>
+              </pre>
+              <p>
+                You can put any valid JavaScript expression inside the curly
+                braces in JSX. For example, 2 + 2, user.firstName, or
+                formatName(user) are all valid JavaScript expressions.
+              </p>
+              <p>
+                In the example below, we embed the result of calling a
+                JavaScript function, formatName(user), into an &lt;h1&gt;
+                element.
+              </p>
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    function formatName(user) {
+    return user.firstName + ' ' + user.lastName;
+    }
+
+    const user = {
+      firstName: 'Harper',
+      lastName: 'Perez'
+    };
+
+    const element = (
+      &lt;h1&gt;
+        Hello, {formatName(user)}!
+      &lt;/h&gt;
+    );
+
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    );</code>
+              </pre>
+              <p>
+                <a
+                  class="article-link"
+                  href="https://reactjs.org/redirect-to-codepen/introducing-jsx"
+                  target="_blank"
+                  >Try it on CodePen</a
+                >
+              </p>
+              <p>
+                We split JSX over multiple lines for readability. While it isn’t
+                required, when doing this, we also recommend wrapping it in
+                parentheses to avoid the pitfalls of automatic semicolon
+                insertion.
+              </p>
+            </section>
+            <section class="article-sections py-2">
+              <h2 class="article-heading my-4">JSX is an Expression Too</h2>
+              <p>
+                After compilation, JSX expressions become regular JavaScript
+                function calls and evaluate to JavaScript objects.
+              </p>
+              <p>
+                This means that you can use JSX inside of if statements and for
+                loops, assign it to variables, accept it as arguments, and
+                return it from functions:
+              </p>
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    function getGreeting(user) {
+      if (user) {
+        return &lt;h1&gt;Hello, {formatName(user)}!&lt;/h1&gt;;
+      }
+      return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;
+    }</code>
+              </pre>
+            </section>
+            <section class="article-sections py-2">
+              <h2 class="article-heading my-4">
+                Specifying Attributes with JSX
+              </h2>
+              <p>
+                You may use quotes to specify string literals as attributes:
+              </p>
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    const element = &lt;div tabIndex="0"&gt&lt;/div&gt;;</code>
+              </pre>
+              <p>
+                You may also use curly braces to embed a JavaScript expression
+                in an attribute:
+              </p>
+              <pre class="code-container mr-md-5">
+<code class="code-example">
+    const element = &lt;img src={user.avatarUrl}&gt;&lt;/img&gt;;</code>
+              </pre>
+              <p>
+                Don’t put quotes around curly braces when embedding a JavaScript
+                expression in an attribute. You should either use quotes (for
+                string values) or curly braces (for expressions), but not both
+                in the same attribute.
+              </p>
+            </section>
+          </article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Rendering_Elements">
+        <section class="main-section" id="Rendering_Elements">
+          <header class="section-header">
             <h1 class="section-heading">Rendering Elements</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Components_and_Props">
+        <section class="main-section" id="Components_and_Props">
+          <header class="section-header">
             <h1 class="section-heading">Components and Props</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="State_and_Lifecycle">
+        <section class="main-section" id="State_and_Lifecycle">
+          <header class="section-header">
             <h1 class="section-heading">State and Lifecycle</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Handling_Events">
+        <section class="main-section" id="Handling_Events">
+          <header class="section-header">
             <h1 class="section-heading">Handling Events</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Conditional_Rendering">
+        <section class="main-section" id="Conditional_Rendering">
+          <header class="section-header">
             <h1 class="section-heading">Conditional Rendering</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Lists_and_Keys">
+        <section class="main-section" id="Lists_and_Keys">
+          <header class="section-header">
             <h1 class="section-heading">Lists and Keys</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Forms">
+        <section class="main-section" id="Forms">
+          <header class="section-header">
             <h1 class="section-heading">Forms</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Lifting_State_Up">
+        <section class="main-section" id="Lifting_State_Up">
+          <header class="section-header">
             <h1 class="section-heading">Lifting State Up</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Composition_vs_Inheritance">
+        <section class="main-section" id="Composition_vs_Inheritance">
+          <header class="section-header">
             <h1 class="section-heading">Composition vs Inheritance</h1>
           </header>
           <article class="section-content"></article>
         </section>
-        <section class="main-section">
-          <header class="section-header" id="Thinking_in_React">
+        <section class="main-section" id="Thinking_in_React">
+          <header class="section-header">
             <h1 class="section-heading">Thinking in React</h1>
           </header>
           <article class="section-content"></article>

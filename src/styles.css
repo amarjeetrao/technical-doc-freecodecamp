@@ -221,6 +221,10 @@ input[type="search"] {
   color: var(--react-primary-color);
 }
 
+.last-article-section {
+  margin-bottom: 24rem;
+}
+
 @media (min-width: 567px) {
   .article-link:hover {
     border: 1px solid var(--react-primary-color);

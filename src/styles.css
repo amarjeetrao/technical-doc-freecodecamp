@@ -33,7 +33,7 @@ body {
 }
 
 aside,
-main {
+.main-section {
   padding-top: 6rem;
 }
 
@@ -41,6 +41,14 @@ input[type="search"] {
   min-width: 10rem;
 }
 
+pre {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+ol li {
+  margin-bottom: 1rem;
+}
 /***************** typography start *******************/
 
 .section-heading {
@@ -222,7 +230,7 @@ input[type="search"] {
 }
 
 .last-article-section {
-  margin-bottom: 24rem;
+  margin-bottom: 20rem;
 }
 
 @media (min-width: 567px) {

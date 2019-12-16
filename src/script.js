@@ -1,7 +1,9 @@
 $(document).ready(function() {
   //hiding every .main-section except 1st section
   $(".main>.main-section").hide();
-  $(".main>.main-section#Hello_World").fadeIn().show();
+  $(".main>.main-section#Hello_World")
+    .fadeIn()
+    .show();
 
   //adding sidbar indicator on current link
   $(".nav-link").click(function(e) {
@@ -15,7 +17,8 @@ $(document).ready(function() {
     let redirectLink = $(this).attr("href");
     $(".main>.main-section").hide();
     $(".main")
-      .find(redirectLink).fadeIn()
+      .find(redirectLink)
+      .fadeIn()
       .show();
   });
 });

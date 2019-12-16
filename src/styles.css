@@ -1,34 +1,40 @@
 /*==================== base styles ====================*/
 
 :root {
+  --light-mode:#fff;
+  --strong-dark-mode:#20232a;
+  --dim-dark-mode:#2e333e;
   --react-primary-color: #00d8ff;
-  --react-secondary-color: #20232a;
-  --body-background-color: #fff;
+  --react-secondary-color: var(--strong-dark-mode);
+  --body-background-color: var(--light-mode);
   --icon-color: #00d8ff;
   --icon-size: 26px;
-  --text-color: #20232a;
-  --code-background-color: #212529;
-  --navbar-background-color: #fff;
+  --text-color: var(--strong-dark-mode);
+  --code-background-color: var(--strong-dark-mode);
+  --navbar-background-color: var(--light-mode);
   --list-background-color: #f7f7f7;
   --list-hover-background-color: #efefef;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
   --react-primary-color: #00d8ff;
-  --react-secondary-color: #20232a;
-  --body-background-color: #fff;
+  --react-secondary-color: var(--strong-dark-mode);
+  --body-background-color: var(--strong-dark-mode);
   --icon-color: #00d8ff;
-  --text-color:#20232a;
-  --navbar-background-color: #fff;
-  --list-background-color: #f7f7f7;
-  --list-hover-background-color: #efefef;
+  --icon-size: 26px;
+  --text-color: var(--light-mode);
+  --code-background-color: var(--dim-dark-mode);
+  --navbar-background-color: var(--dim-dark-mode);
+  --list-background-color: var(--dim-dark-mode);
+  --list-hover-background-color: var(--strong-dark-mode);
   }
-} */
+}
 
 html,
 body {
-  color: var(--react-secondary-color);
+  color: var(--text-color);
+  background-color: var(--body-background-color);
   scroll-behavior: smooth;
 }
 
@@ -79,6 +85,8 @@ ol li {
 /*==================== bootstrap customization ====================*/
 
 .header .navbar {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -87,10 +95,14 @@ ol li {
 }
 
 .form-control {
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
 
 .form-control:focus {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -101,7 +113,7 @@ ol li {
 }
 
 .list-group-item a {
-  color: var(--react-secondary-color);
+  color: var(--text-color);
 }
 
 .list-group-item:hover,
@@ -121,26 +133,71 @@ ol li {
 .header {
   background-color: var(--navbar-background-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
 .brand-logo {
   width: 100%;
+  -moz-animation: logoSpinning 6s linear infinite;
+  -o-animation: logoSpinning 6s linear infinite;
+  -webkit-animation: logoSpinning 6s linear infinite;
   animation: logoSpinning 6s linear infinite;
+}
+
+@-webkit-keyframes logoSpinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-moz-keyframes logoSpinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes logoSpinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
 }
 
 @keyframes logoSpinning {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 
 .connections {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 100px;
 }
@@ -198,6 +255,9 @@ ol li {
   width: 100%;
   overflow-y: scroll;
   background: var(--list-background-color);
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
 }
 
@@ -211,8 +271,9 @@ ol li {
 
 .code-container {
   color: white;
-  background: #212529;
+  background: var(--code-background-color);
   border-radius: 0.4rem;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -221,6 +282,9 @@ ol li {
   font-weight: 500;
   color: var(--react-primary-color);
   border-radius: 0.4rem;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
